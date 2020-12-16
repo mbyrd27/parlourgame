@@ -1,30 +1,44 @@
 const team = [
     {
-        name: "The Knights"
+        id: 1,
+        name: "The Knights",
+        creationDate: "12/4/1663"
     },
 
     {
-        name: "The Barons"
+        id: 2,
+        name: "The Barons",
+        creationDate: "5/12/1700"
     },
 
     {
-        name: "Green Machine"
+        id: 3,
+        name: "Green Machine",
+        creationDate: "8/8/1844"
     },
 
     {
-        name: "Pink Fury"
+        id: 4,
+        name: "Pink Fury",
+        creationDate: "9/27/2018"
     },
 
     {
-        name: "Road Warriors"
+        id: 5,
+        name: "Road Warriors",
+        creationDate: "4/15/1992"
     }, 
 
     {
-        name: "Team 7"
+        id: 6,
+        name: "Team 7",
+        creationDate: "1/7/1944"
     }, 
 
     {
-        name: "The Wizards"
+        id: 7,
+        name: "The Wizards",
+        creationDate: "4/19/2000"
     }
 ]
 

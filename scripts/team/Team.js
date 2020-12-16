@@ -1,7 +1,7 @@
 export const Team = (team) => {
-    return `<section class="team">
+    return `
         <ul class="team__name">
             <li>${team.name}</li>
         </ul>
-    </section>`
+        `
 }
