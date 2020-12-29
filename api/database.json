@@ -1,0 +1,43 @@
+{
+    "teams": [
+        {
+            "id": 1,
+            "name": "The Knights",
+            "creationDate": "12/4/1663"
+        }
+    ],
+
+    "players": [
+        {
+            "firstName": "Jerry",
+            "lastName": "Johnson",
+            "country": "USA",
+            "teamName": "The Knights",
+            "team_id": 1
+        },
+
+        {
+            "firstName": "Dakota",
+            "lastName": "Morris",
+            "country": "USA",
+            "teamName": "The Knights",
+            "team_id": 1
+        },
+
+        {
+            "firstName": "Gerhard",
+            "lastName": "Wombat",
+            "country": "Finland",
+            "teamName": "The Knights",
+            "team_id": 1
+        }
+    ], 
+    "teamScores": [
+        {
+            "teamName": "The Knights",
+            "team_id": 1,
+            "score": 40,
+            "game_date": "12/16/2020"
+        }
+    ]
+}
