@@ -1,0 +1,28 @@
+.teamNameSubmit {
+    margin: 0.25rem auto;
+}
+
+.teamNameForm {
+    margin-bottom: 0.5rem;
+}
+
+.btn-submit {
+    color: white;
+    background-color: green;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.playerForm {
+    margin: 0.25rem auto;
+}
+
+.addTeamContainer {
+    border-bottom: 1px solid black;
+    padding-bottom: 1rem;
+    width: 15%;
+}
+
+.addPlayerContainer {
+    width: 15%;
+}
