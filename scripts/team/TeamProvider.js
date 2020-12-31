@@ -1,47 +1,35 @@
-const team = [
-    {
-        id: 1,
-        name: "The Knights",
-        creationDate: "12/4/1663"
-    },
+let team = []
 
-    {
-        id: 2,
-        name: "The Barons",
-        creationDate: "5/12/1700"
-    },
+//Dispatch to the event hub the fact that the Team state has changed
+const dispatchStateChangeEvent = () => {
+    const teamStateChangedEvent = new CustomEvent('teamStateChanged')
+    eventHub.dispatchEvent(teamStateChangedEvent)
+}
 
-    {
-        id: 3,
-        name: "Green Machine",
-        creationDate: "8/8/1844"
-    },
+//Get the team array from the API in its current state
+export const getTeams = () => {
+    return fetch('http://localhost:8088/teams')
+        .then(response => response.json())
+        .then(parsedTeams => {
+            team = parsedTeams;
+        })
+}
 
-    {
-        id: 4,
-        name: "Pink Fury",
-        creationDate: "9/27/2018"
-    },
+//Push a new team up to the API
+export const updateTeam = team => {
+    return fetch('http://localhost:8088/teams', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(team)
+    })
+    .then(getTeams)
+    .then(dispatchStateChangeEvent)
+}
 
-    {
-        id: 5,
-        name: "Road Warriors",
-        creationDate: "4/15/1992"
-    }, 
 
-    {
-        id: 6,
-        name: "Team 7",
-        creationDate: "1/7/1944"
-    }, 
 
-    {
-        id: 7,
-        name: "The Wizards",
-        creationDate: "4/19/2000"
-    }
-]
-
-export const teamList = () => {
+export const useTeam = () => {
     return team.slice();
 }

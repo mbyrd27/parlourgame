@@ -1,9 +1,15 @@
-import { renderTeams } from './team/TeamList.js'
-import { renderPlayers } from './player/PlayerList.js'
-import { renderScores } from './score/ScoreList.js';
+import { newTeamForm } from './team/NewTeamForm.js'
+import { TeamSelect } from './player/NewPlayerForm.js';
 
 console.log("Welcome to the main module");
 
+/* Old Starter Code to display sample data
 renderTeams();
 renderPlayers();
 renderScores();
+*/
+
+newTeamForm();
+TeamSelect();
+
+
