@@ -11,7 +11,10 @@ eventHub.addEventListener('click', clickEvent => {
 
         const newTeam = {
             name: teamName.value,
-            creationDate: Date.now()
+            creationDate: Date.now(),
+            // THIS IS CHEATING - to be changed later
+            players: 0,
+            score: 0
         }
 
         //POST newTeam to the API

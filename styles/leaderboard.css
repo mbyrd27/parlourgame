@@ -1,0 +1,21 @@
+.scoreboard {
+    display: flex;
+    width: 50%;
+}
+
+ul {
+   list-style-type: none; 
+   padding-left: 0;
+}
+
+.teamList {
+    margin-right: 2rem;
+}
+
+.playerList, .scoreList {
+    margin: 1rem;
+}
+
+
+
+

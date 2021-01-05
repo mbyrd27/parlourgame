@@ -1,18 +1,24 @@
 {
   "teams": [
     {
-      "id": 1,
       "name": "The Knights",
-      "creationDate": "12/4/1663"
+      "creationDate": 1609821067841,
+      "players": 0,
+      "score": 0,
+      "id": 1
     },
     {
       "name": "Green Machine",
-      "creationDate": 1609442436423,
+      "creationDate": 1609821086052,
+      "players": 0,
+      "score": 0,
       "id": 2
     },
     {
       "name": "The Pink Fairies",
-      "creationDate": 1609442455528,
+      "creationDate": 1609821096470,
+      "players": 0,
+      "score": 0,
       "id": 3
     }
   ],

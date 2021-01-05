@@ -25,4 +25,6 @@
 
 .addPlayerContainer {
     width: 15%;
+    border-bottom: 1px solid black;
+    padding-bottom: 1rem;
 }

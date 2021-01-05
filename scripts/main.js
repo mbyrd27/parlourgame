@@ -1,5 +1,6 @@
 import { newTeamForm } from './team/NewTeamForm.js'
 import { TeamSelect } from './player/NewPlayerForm.js';
+import { displayScore } from './score/Leaderboard.js';
 
 console.log("Welcome to the main module");
 
@@ -11,5 +12,6 @@ renderScores();
 
 newTeamForm();
 TeamSelect();
+displayScore();
 
 
