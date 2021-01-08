@@ -1,9 +1,26 @@
 import { getTeams, useTeam } from '../team/TeamProvider.js'
+import { updatePlayers } from './PlayerProvider.js'
 
 const contentTarget = document.querySelector('.addPlayerContainer')
 const eventHub = document.querySelector('#container')
 
-const renderPlayerForm = currentTeams => {
+eventHub.addEventListener('click', clickEvent => {
+    if (clickEvent.target.id === 'newPlayer') {
+        const playerFirstName = document.querySelector('#playerFirstName').value
+        const playerLastName = document.querySelector('#playerLastName').value
+        const dropdownSelector = document.getElementById('assignTeam')
+        const playerTeamId = parseInt(dropdownSelector[dropdownSelector.selectedIndex].value)
+
+        const newPlayer = {
+            firstName: playerFirstName,
+            lastName: playerLastName,
+            teamId: playerTeamId
+        }
+        updatePlayers(newPlayer);
+    }
+})
+
+export const renderPlayerForm = currentTeams => {
     contentTarget.innerHTML = `
     <h3 class="addPlayerHeader">New Player</h3>
     <form action="" method="post" class="addPlayerForm">
@@ -18,15 +35,16 @@ const renderPlayerForm = currentTeams => {
                 <option value="0">Please select a team...</option>
                 ${
                     currentTeams.map(team => {
-                        return `<option value="${team.name}">${team.name}</option>`
+                        return `<option value="${team.id}">${team.name}</option>`
                     }).join('')
                 }
             </select>
         </div>
-        <div class="addPlayerSubmit">
-            <input type="submit" value="Add Player to Team" class="btn-submit" id="newPlayer"/>
-        </div>
     </form>
+    <div class="addPlayerSubmit">
+        <!--<input type="submit" value="Add Player to Team" class="btn-submit" id="newPlayer"/>-->
+        <button type="button" class="btn-submit" id="newPlayer">Add Player to Team</button>
+    </div>
     `
 }
 

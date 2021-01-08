@@ -1,3 +1,4 @@
+const eventHub = document.querySelector('#container')
 let team = []
 
 //Dispatch to the event hub the fact that the Team state has changed
@@ -27,8 +28,6 @@ export const updateTeam = team => {
     .then(getTeams)
     .then(dispatchStateChangeEvent)
 }
-
-
 
 export const useTeam = () => {
     return team.slice();

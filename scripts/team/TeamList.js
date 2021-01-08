@@ -1,11 +1,26 @@
-// import { Team } from './Team.js'
-// import { teamList } from './TeamProvider.js'
+import { getTeams, useTeam } from './TeamProvider.js'
+import { newTeamForm } from './NewTeamForm.js'
 
-// const contentTarget = document.querySelector('.teams');
+const eventHub = document.querySelector('#container')
+const contentTarget = document.querySelector('.teamList')
 
-// export const renderTeams = () => {
-//     let teams = teamList();
-//     contentTarget.innerHTML += teams.map(team => {
-//         return Team(team)
-//     }).join('');
-// }
+export const TeamList = addedTeam => {
+    contentTarget.innerHTML = `<li class="teamList--header"><u>Name</u></li>
+        ${addedTeam.map(team => {
+            return `<li>${team.name}</li>`
+            })
+            .join('')
+        }`
+        
+}
+
+export const displayTeams = () => {
+    getTeams().then(() => {
+        const currentTeams = useTeam();
+        TeamList(currentTeams);
+        newTeamForm();
+    }) 
+}
+
+
+eventHub.addEventListener('teamStateChanged', displayTeams);

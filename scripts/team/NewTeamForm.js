@@ -7,6 +7,7 @@ eventHub.addEventListener('click', clickEvent => {
     //This needs to construct a team object to send to the API using the name
     //that was entered by the user, and the date/timestamp the user clicked 'Create Team'
     if (clickEvent.target.id === 'newTeam') {
+ 
         const teamName = document.querySelector('#teamName');
 
         const newTeam = {
@@ -18,7 +19,8 @@ eventHub.addEventListener('click', clickEvent => {
         }
 
         //POST newTeam to the API
-        updateTeam(newTeam);  
+        updateTeam(newTeam);
+        
     }
 
 })
@@ -30,9 +32,9 @@ export const newTeamForm = () => {
         <div class="teamNameForm">
             <input type="text" name="teamName" id="teamName" placeholder="Team name" required />
         </div>
-        <div class="teamNameSubmit">
-            <input type="submit" value="Create Team" class="btn-submit" id="newTeam"/>
-        </div>
     </form>
+    <div class="teamNameSubmit">
+        <button type="button" class="btn-submit" id="newTeam">Create Team</button>
+    </div>
     `
 }
