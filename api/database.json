@@ -2,21 +2,21 @@
   "teams": [
     {
       "name": "The Knights",
-      "creationDate": 1609821067841,
+      "creationDate": 1610072821722,
       "players": 0,
       "score": 0,
       "id": 1
     },
     {
-      "name": "Green Machine",
-      "creationDate": 1609821086052,
+      "name": "The Pink Fairies",
+      "creationDate": 1610073725059,
       "players": 0,
       "score": 0,
       "id": 2
     },
     {
-      "name": "The Pink Fairies",
-      "creationDate": 1609821096470,
+      "name": "Green Machine",
+      "creationDate": 1610073798634,
       "players": 0,
       "score": 0,
       "id": 3
@@ -24,31 +24,46 @@
   ],
   "players": [
     {
-      "firstName": "Jerry",
-      "lastName": "Johnson",
-      "country": "USA",
-      "teamName": "The Knights",
-      "team_id": 1
+      "firstName": "Justin",
+      "lastName": "Williams",
+      "teamId": 1,
+      "id": 1
     },
     {
-      "firstName": "Dakota",
-      "lastName": "Morris",
-      "country": "USA",
-      "teamName": "The Knights",
-      "team_id": 1
+      "firstName": "Bob",
+      "lastName": "Myrczyk",
+      "teamId": 1,
+      "id": 2
     },
     {
-      "firstName": "Gerhard",
-      "lastName": "Wombat",
-      "country": "Finland",
-      "teamName": "The Knights",
-      "team_id": 1
+      "firstName": "Carolyn",
+      "lastName": "Slowski",
+      "teamId": 2,
+      "id": 3
+    },
+    {
+      "firstName": "Tom",
+      "lastName": "McDonald",
+      "teamId": 3,
+      "id": 4
+    },
+    {
+      "firstName": "Jim",
+      "lastName": "Vesey",
+      "teamId": 2,
+      "id": 5
+    },
+    {
+      "firstName": "Bobby",
+      "lastName": "Misey",
+      "teamId": 1,
+      "id": 6
     }
   ],
   "teamScores": [
     {
       "teamName": "The Knights",
-      "team_id": 1,
+      "teamId": 1,
       "score": 40,
       "game_date": "12/16/2020"
     }

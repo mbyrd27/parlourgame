@@ -1,37 +1,29 @@
-const players = [
-    {
-        firstName: "Jerry",
-        lastName: "Johnson",
-        country: "USA",
-        teamName: "The Knights",
-        team_id: 1
-    },
+const eventHub = document.querySelector('#container')
+let players = []
 
-    {
-        firstName: "Tina",
-        lastName: "Scoober",
-        country: "Canada",
-        teamName: "Pink Fury",
-        team_id: 4
-    },
+const dispatchStateChangeEvent = () => {
+    const addPlayerEvent = new CustomEvent('playerAdded')
+    eventHub.dispatchEvent(addPlayerEvent)
+}
 
-    {
-        firstName: "Dolph",
-        lastName: "Holmscomb",
-        country: "Norway", 
-        teamName: "Green Machine",
-        team_id: 3
-    },
+export const getPlayers = () => {
+    return fetch('http://localhost:8088/players')
+        .then(response => response.json())
+        .then(parsedPlayers => players = parsedPlayers)
+}
 
-    {
-        firstName: "Igor",
-        lastName: "Lebedev",
-        country: "Russia",
-        teamName: "The Barons",
-        team_id: 2
-    }
-]
+export const updatePlayers = player => {
+    return fetch('http://localhost:8088/players', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(player)
+    })
+    .then(getPlayers)
+    .then(dispatchStateChangeEvent)
+}
 
-export const gamePlayers = () => {
+export const usePlayers = () => {
     return players.slice();
 }
