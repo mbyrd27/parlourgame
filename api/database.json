@@ -20,6 +20,13 @@
       "players": 0,
       "score": 0,
       "id": 3
+    },
+    {
+      "name": "Team 7",
+      "creationDate": 1610246902841,
+      "players": 0,
+      "score": 0,
+      "id": 4
     }
   ],
   "players": [
