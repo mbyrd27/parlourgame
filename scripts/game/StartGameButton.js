@@ -9,7 +9,6 @@ eventHub.addEventListener('click', clickEvent => {
     if (clickEvent.target.id === 'startGame') {
         const gameStartedEvent = new CustomEvent('beginGame')
         eventHub.dispatchEvent(gameStartedEvent)
-        console.log('this ran!')
         }
     }
 )

@@ -65,14 +65,35 @@
       "lastName": "Misey",
       "teamId": 1,
       "id": 6
+    },
+    {
+      "firstName": "Darcy",
+      "lastName": "Carlton",
+      "teamId": 2,
+      "id": 7
     }
   ],
   "teamScores": [
     {
-      "teamName": "The Knights",
       "teamId": 1,
-      "score": 40,
-      "game_date": "12/16/2020"
+      "teamName": "The Knights",
+      "game_date": 1610679738990,
+      "score": 5,
+      "id": 1
+    },
+    {
+      "teamId": 2,
+      "teamName": "The Pink Fairies",
+      "game_date": 1610679740479,
+      "score": 2,
+      "id": 2
+    },
+    {
+      "teamId": 3,
+      "teamName": "Green Machine",
+      "game_date": 1610679742681,
+      "score": 2,
+      "id": 3
     }
   ]
 }

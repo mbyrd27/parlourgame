@@ -5,6 +5,7 @@ import { listPlayerTotal } from './player/PlayerList.js';
 import { StartGameButton } from './game/StartGameButton.js';
 import './game/GameSetup.js';
 import './score/ScoreList.js'
+import './score/RecordScore.js'
 
 console.log("Welcome to the main module");
 
@@ -13,6 +14,8 @@ TeamSelect();
 displayTeams();
 listPlayerTotal()
 StartGameButton()
+
+
 
 
 

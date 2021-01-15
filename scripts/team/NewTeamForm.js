@@ -8,15 +8,16 @@ eventHub.addEventListener('click', clickEvent => {
     //that was entered by the user, and the date/timestamp the user clicked 'Create Team'
     if (clickEvent.target.id === 'newTeam') {
  
-        const teamName = document.querySelector('#teamName');
+        const newTeamName = document.querySelector('#teamName');
 
         const newTeam = {
-            name: teamName.value,
+            name: newTeamName.value,
             creationDate: Date.now(),
-            // THIS IS CHEATING - to be changed later
-            players: 0,
-            score: 0
         }
+
+        //const newScore = {
+            //teamName: newTeamName.value,
+        //}
 
         //POST newTeam to the API
         updateTeam(newTeam);

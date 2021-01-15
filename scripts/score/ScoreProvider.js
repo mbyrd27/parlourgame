@@ -1,34 +1,29 @@
-const score = [
-    {
-        teamName: "The Knights",
-        team_id: 1,
-        score: 40,
-        game_date: "12/16/2020"
-    },
+let score = []
+const eventHub = document.querySelector('#container')
 
-    {
-        teamName: "Pink Fury",
-        team_id: 4,
-        score: 51,
-        game_date: "11/11/2020"
-    },
+const dispatchStateChangeEvent = () => {
+    const scoreStateChangedEvent = new CustomEvent('scoreAdded')
+    eventHub.dispatchEvent(scoreStateChangedEvent)
+}
 
-    {
-        teamName: "Team 7",
-        team_id: 6,
-        score: 44,
-        game_date: "11/26/2020"
-    },
+export const getScore = () => {
+    return fetch('http://localhost:8088/teamScores')
+        .then(response => response.json())
+        .then(parsedScores => score = parsedScores)
+}
 
-    {
-        teamName: "The Wizards",
-        team_id: 7,
-        score: 22,
-        game_date: "12/1/2020"
-    }
-
-]
-
-export const scoreBoard = () => {
+export const useScore = () => {
     return score.slice();
+}
+
+export const updateScore = score => {
+    return fetch('http://localhost:8088/teamScores', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(score)
+    })
+    .then(getScore)
+    .then(dispatchStateChangeEvent)
 }

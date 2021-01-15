@@ -1,14 +1,24 @@
 const eventHub = document.querySelector('#container')
 const contentTarget = document.querySelector('.gameBoard')
+import { gameState } from '../game/GameSetup.js'
 
-eventHub.addEventListener('gameReady', event => {
-    contentTarget.innerHTML = `<form>
-    <label for="${event.detail[0]}">${event.detail[0]}</label>
-    <input type="text" id="scoreTeam1" name="${event.detail[0]}">
-    <label for="${event.detail[1]}">${event.detail[1]}</label>
-    <input type="text" id="scoreTeam2" name="${event.detail[1]}">
-    <label for="${event.detail[2]}">${event.detail[2]}</label>
-    <input type="text" id="scoreTeam3" name="${event.detail[2]}">
-    <button type="button" class="btn-submit" name="recordScores">Save Round Scores</button>
+export const renderGame = (round) => {
+
+    contentTarget.innerHTML = `<h2>Round ${round}</h2>
+    <form class="scoreRecorder">
+    ${
+        gameState.map(team => {
+           return `<label for="${team.teamName}">${team.teamName}</label>
+                   <input type="text" id="team--${team.teamId}" name="${team.teamName}">`
+        }).join('')
+    }
+    <button type="button" class="btn-submit saveScores" name="recordScores" id="recordScores">Save Round Scores</button>
+    </form>
     `
-})
+}
+
+eventHub.addEventListener('gameReady', event => renderGame(1))
+
+
+
+
