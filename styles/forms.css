@@ -28,3 +28,23 @@
     border-bottom: 1px solid black;
     padding-bottom: 1rem;
 }
+
+.scoreRecorder, .teamSelection {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid black;
+    padding-bottom: 1rem;
+    width: 25%;
+}
+
+.teamDropdownGame {
+    margin: 0.5rem 0;
+}
+
+.saveScores, #startGame {
+    margin-top: 1rem;
+}
+
+.score {
+    margin-bottom: 0.5rem;
+}
